@@ -1,0 +1,2043 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "beego Test API",
+        "description": "beego has a very cool tools to autogenerate documents for your API",
+        "version": "1.0.0",
+        "termsOfService": "http://beego.me/",
+        "contact": {
+            "email": "astaxie@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "basePath": "/v1",
+    "paths": {
+        "/autor_produccion_academica/": {
+            "get": {
+                "tags": [
+                    "autor_produccion_academica"
+                ],
+                "description": "get AutorProduccionAcademica",
+                "operationId": "AutorProduccionAcademicaController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.AutorProduccionAcademica"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "autor_produccion_academica"
+                ],
+                "description": "create AutorProduccionAcademica",
+                "operationId": "AutorProduccionAcademicaController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for AutorProduccionAcademica content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AutorProduccionAcademica"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.AutorProduccionAcademica"
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            }
+        },
+        "/autor_produccion_academica/{id}": {
+            "get": {
+                "tags": [
+                    "autor_produccion_academica"
+                ],
+                "description": "get AutorProduccionAcademica by id",
+                "operationId": "AutorProduccionAcademicaController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.AutorProduccionAcademica"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "autor_produccion_academica"
+                ],
+                "description": "update the AutorProduccionAcademica",
+                "operationId": "AutorProduccionAcademicaController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for AutorProduccionAcademica content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AutorProduccionAcademica"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.AutorProduccionAcademica"
+                        }
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "autor_produccion_academica"
+                ],
+                "description": "delete the AutorProduccionAcademica",
+                "operationId": "AutorProduccionAcademicaController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        },
+        "/estado_autor_produccion/": {
+            "get": {
+                "tags": [
+                    "estado_autor_produccion"
+                ],
+                "description": "get EstadoAutorProduccion",
+                "operationId": "EstadoAutorProduccionController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoAutorProduccion"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "estado_autor_produccion"
+                ],
+                "description": "create EstadoAutorProduccion",
+                "operationId": "EstadoAutorProduccionController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for EstadoAutorProduccion content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoAutorProduccion"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.EstadoAutorProduccion"
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            }
+        },
+        "/estado_autor_produccion/{id}": {
+            "get": {
+                "tags": [
+                    "estado_autor_produccion"
+                ],
+                "description": "get EstadoAutorProduccion by id",
+                "operationId": "EstadoAutorProduccionController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoAutorProduccion"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "estado_autor_produccion"
+                ],
+                "description": "update the EstadoAutorProduccion",
+                "operationId": "EstadoAutorProduccionController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for EstadoAutorProduccion content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoAutorProduccion"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoAutorProduccion"
+                        }
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "estado_autor_produccion"
+                ],
+                "description": "delete the EstadoAutorProduccion",
+                "operationId": "EstadoAutorProduccionController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        },
+        "/metadato_produccion_academica/": {
+            "get": {
+                "tags": [
+                    "metadato_produccion_academica"
+                ],
+                "description": "get MetadatoProduccionAcademica",
+                "operationId": "MetadatoProduccionAcademicaController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.MetadatoProduccionAcademica"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "metadato_produccion_academica"
+                ],
+                "description": "create MetadatoProduccionAcademica",
+                "operationId": "MetadatoProduccionAcademicaController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for MetadatoProduccionAcademica content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.MetadatoProduccionAcademica"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.MetadatoProduccionAcademica"
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            }
+        },
+        "/metadato_produccion_academica/{id}": {
+            "get": {
+                "tags": [
+                    "metadato_produccion_academica"
+                ],
+                "description": "get MetadatoProduccionAcademica by id",
+                "operationId": "MetadatoProduccionAcademicaController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.MetadatoProduccionAcademica"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "metadato_produccion_academica"
+                ],
+                "description": "update the MetadatoProduccionAcademica",
+                "operationId": "MetadatoProduccionAcademicaController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for MetadatoProduccionAcademica content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.MetadatoProduccionAcademica"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.MetadatoProduccionAcademica"
+                        }
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "metadato_produccion_academica"
+                ],
+                "description": "delete the MetadatoProduccionAcademica",
+                "operationId": "MetadatoProduccionAcademicaController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        },
+        "/metadato_subtipo_produccion/": {
+            "get": {
+                "tags": [
+                    "metadato_subtipo_produccion"
+                ],
+                "description": "get MetadatoSubtipoProduccion",
+                "operationId": "MetadatoSubtipoProduccionController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.MetadatoSubtipoProduccion"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "metadato_subtipo_produccion"
+                ],
+                "description": "create MetadatoSubtipoProduccion",
+                "operationId": "MetadatoSubtipoProduccionController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for MetadatoSubtipoProduccion content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.MetadatoSubtipoProduccion"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.MetadatoSubtipoProduccion"
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            }
+        },
+        "/metadato_subtipo_produccion/{id}": {
+            "get": {
+                "tags": [
+                    "metadato_subtipo_produccion"
+                ],
+                "description": "get MetadatoSubtipoProduccion by id",
+                "operationId": "MetadatoSubtipoProduccionController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.MetadatoSubtipoProduccion"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "metadato_subtipo_produccion"
+                ],
+                "description": "update the MetadatoSubtipoProduccion",
+                "operationId": "MetadatoSubtipoProduccionController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for MetadatoSubtipoProduccion content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.MetadatoSubtipoProduccion"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.MetadatoSubtipoProduccion"
+                        }
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "metadato_subtipo_produccion"
+                ],
+                "description": "delete the MetadatoSubtipoProduccion",
+                "operationId": "MetadatoSubtipoProduccionController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        },
+        "/produccion_academica/": {
+            "get": {
+                "tags": [
+                    "produccion_academica"
+                ],
+                "description": "get ProduccionAcademica",
+                "operationId": "ProduccionAcademicaController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.ProduccionAcademica"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "produccion_academica"
+                ],
+                "description": "create ProduccionAcademica",
+                "operationId": "ProduccionAcademicaController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for ProduccionAcademica content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.ProduccionAcademica"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.ProduccionAcademica"
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            }
+        },
+        "/produccion_academica/{id}": {
+            "get": {
+                "tags": [
+                    "produccion_academica"
+                ],
+                "description": "get ProduccionAcademica by id",
+                "operationId": "ProduccionAcademicaController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.ProduccionAcademica"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "produccion_academica"
+                ],
+                "description": "update the ProduccionAcademica",
+                "operationId": "ProduccionAcademicaController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for ProduccionAcademica content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.ProduccionAcademica"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.ProduccionAcademica"
+                        }
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "produccion_academica"
+                ],
+                "description": "delete the ProduccionAcademica",
+                "operationId": "ProduccionAcademicaController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        },
+        "/soporte_produccion_academica/": {
+            "get": {
+                "tags": [
+                    "soporte_produccion_academica"
+                ],
+                "description": "get SoporteProduccionAcademica",
+                "operationId": "SoporteProduccionAcademicaController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.SoporteProduccionAcademica"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "soporte_produccion_academica"
+                ],
+                "description": "create SoporteProduccionAcademica",
+                "operationId": "SoporteProduccionAcademicaController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for SoporteProduccionAcademica content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.SoporteProduccionAcademica"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.SoporteProduccionAcademica"
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            }
+        },
+        "/soporte_produccion_academica/{id}": {
+            "get": {
+                "tags": [
+                    "soporte_produccion_academica"
+                ],
+                "description": "get SoporteProduccionAcademica by id",
+                "operationId": "SoporteProduccionAcademicaController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.SoporteProduccionAcademica"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "soporte_produccion_academica"
+                ],
+                "description": "update the SoporteProduccionAcademica",
+                "operationId": "SoporteProduccionAcademicaController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for SoporteProduccionAcademica content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.SoporteProduccionAcademica"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.SoporteProduccionAcademica"
+                        }
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "soporte_produccion_academica"
+                ],
+                "description": "delete the SoporteProduccionAcademica",
+                "operationId": "SoporteProduccionAcademicaController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        },
+        "/subtipo_produccion/": {
+            "get": {
+                "tags": [
+                    "subtipo_produccion"
+                ],
+                "description": "get SubtipoProduccion",
+                "operationId": "SubtipoProduccionController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.SubtipoProduccion"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "subtipo_produccion"
+                ],
+                "description": "create SubtipoProduccion",
+                "operationId": "SubtipoProduccionController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for SubtipoProduccion content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.SubtipoProduccion"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.SubtipoProduccion"
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            }
+        },
+        "/subtipo_produccion/{id}": {
+            "get": {
+                "tags": [
+                    "subtipo_produccion"
+                ],
+                "description": "get SubtipoProduccion by id",
+                "operationId": "SubtipoProduccionController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.SubtipoProduccion"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "subtipo_produccion"
+                ],
+                "description": "update the SubtipoProduccion",
+                "operationId": "SubtipoProduccionController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for SubtipoProduccion content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.SubtipoProduccion"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.SubtipoProduccion"
+                        }
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "subtipo_produccion"
+                ],
+                "description": "delete the SubtipoProduccion",
+                "operationId": "SubtipoProduccionController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        },
+        "/tipo_metadato/": {
+            "get": {
+                "tags": [
+                    "tipo_metadato"
+                ],
+                "description": "get TipoMetadato",
+                "operationId": "TipoMetadatoController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TipoMetadato"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "tipo_metadato"
+                ],
+                "description": "create TipoMetadato",
+                "operationId": "TipoMetadatoController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for TipoMetadato content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TipoMetadato"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.TipoMetadato"
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            }
+        },
+        "/tipo_metadato/{id}": {
+            "get": {
+                "tags": [
+                    "tipo_metadato"
+                ],
+                "description": "get TipoMetadato by id",
+                "operationId": "TipoMetadatoController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TipoMetadato"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "tipo_metadato"
+                ],
+                "description": "update the TipoMetadato",
+                "operationId": "TipoMetadatoController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for TipoMetadato content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TipoMetadato"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TipoMetadato"
+                        }
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "tipo_metadato"
+                ],
+                "description": "delete the TipoMetadato",
+                "operationId": "TipoMetadatoController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        },
+        "/tipo_produccion/": {
+            "get": {
+                "tags": [
+                    "tipo_produccion"
+                ],
+                "description": "get TipoProduccion",
+                "operationId": "TipoProduccionController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TipoProduccion"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "tipo_produccion"
+                ],
+                "description": "create TipoProduccion",
+                "operationId": "TipoProduccionController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for TipoProduccion content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TipoProduccion"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.TipoProduccion"
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            }
+        },
+        "/tipo_produccion/{id}": {
+            "get": {
+                "tags": [
+                    "tipo_produccion"
+                ],
+                "description": "get TipoProduccion by id",
+                "operationId": "TipoProduccionController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TipoProduccion"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "tipo_produccion"
+                ],
+                "description": "update the TipoProduccion",
+                "operationId": "TipoProduccionController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for TipoProduccion content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TipoProduccion"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TipoProduccion"
+                        }
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "tipo_produccion"
+                ],
+                "description": "delete the TipoProduccion",
+                "operationId": "TipoProduccionController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        },
+        "/tr_produccion_academica/": {
+            "post": {
+                "tags": [
+                    "tr_produccion_academica"
+                ],
+                "description": "create the TrProduccionAcademica",
+                "operationId": "TrProduccionAcademicaController.PostTrProduccionAcademica",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for TrProduccionAcademica content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TrProduccionAcademica"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.TrProduccionAcademica"
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            }
+        },
+        "/tr_produccion_academica/{id}": {
+            "put": {
+                "tags": [
+                    "tr_produccion_academica"
+                ],
+                "description": "update the TrProduccionAcademica",
+                "operationId": "TrProduccionAcademicaController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for TrProduccionAcademica content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TrProduccionAcademica"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TrProduccionAcademica"
+                        }
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "tr_produccion_academica"
+                ],
+                "description": "delete the ProduccionAcademica",
+                "operationId": "TrProduccionAcademicaController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        },
+        "/tr_produccion_academica/{persona}": {
+            "get": {
+                "tags": [
+                    "tr_produccion_academica"
+                ],
+                "description": "get TrProduccionAcademicaController",
+                "operationId": "TrProduccionAcademicaController.Get All By Persona",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "persona",
+                        "description": "Persona",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TrProduccionAcademicaController"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "25151.\u003cnil\u003e.AutorProduccionAcademica": {
+            "title": "AutorProduccionAcademica",
+            "type": "object"
+        },
+        "25200.\u003cnil\u003e.MetadatoProduccionAcademica": {
+            "title": "MetadatoProduccionAcademica",
+            "type": "object"
+        },
+        "models.AutorProduccionAcademica": {
+            "title": "AutorProduccionAcademica",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "EstadoAutorProduccionId": {
+                    "$ref": "#/definitions/models.EstadoAutorProduccion"
+                },
+                "FechaCreacion": {
+                    "type": "string"
+                },
+                "FechaModificacion": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "PersonaId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "ProduccionAcademicaId": {
+                    "$ref": "#/definitions/models.ProduccionAcademica"
+                }
+            }
+        },
+        "models.EstadoAutorProduccion": {
+            "title": "EstadoAutorProduccion",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "CodigoAbreviacion": {
+                    "type": "string"
+                },
+                "Descripcion": {
+                    "type": "string"
+                },
+                "FechaCreacion": {
+                    "type": "string"
+                },
+                "FechaModificacion": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
+                },
+                "NumeroOrden": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        "models.MetadatoProduccionAcademica": {
+            "title": "MetadatoProduccionAcademica",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "FechaCreacion": {
+                    "type": "string"
+                },
+                "FechaModificacion": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "MetadatoSubtipoProduccionId": {
+                    "$ref": "#/definitions/models.MetadatoSubtipoProduccion"
+                },
+                "ProduccionAcademicaId": {
+                    "$ref": "#/definitions/models.ProduccionAcademica"
+                },
+                "Valor": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.MetadatoSubtipoProduccion": {
+            "title": "MetadatoSubtipoProduccion",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "FechaCreacion": {
+                    "type": "string"
+                },
+                "FechaModificacion": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "SubtipoProduccionId": {
+                    "$ref": "#/definitions/models.SubtipoProduccion"
+                },
+                "TipoMetadatoId": {
+                    "$ref": "#/definitions/models.TipoMetadato"
+                }
+            }
+        },
+        "models.ProduccionAcademica": {
+            "title": "ProduccionAcademica",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "Fecha": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "FechaCreacion": {
+                    "type": "string"
+                },
+                "FechaModificacion": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Resumen": {
+                    "type": "string"
+                },
+                "SubtipoProduccionId": {
+                    "$ref": "#/definitions/models.SubtipoProduccion"
+                },
+                "Titulo": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.SoporteProduccionAcademica": {
+            "title": "SoporteProduccionAcademica",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "Descripcion": {
+                    "type": "string"
+                },
+                "DocumentoId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "FechaCreacion": {
+                    "type": "string"
+                },
+                "FechaModificacion": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "ProduccionAcademicaId": {
+                    "$ref": "#/definitions/models.ProduccionAcademica"
+                }
+            }
+        },
+        "models.SubtipoProduccion": {
+            "title": "SubtipoProduccion",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "CodigoAbreviacion": {
+                    "type": "string"
+                },
+                "Descripcion": {
+                    "type": "string"
+                },
+                "FechaCreacion": {
+                    "type": "string"
+                },
+                "FechaModificacion": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
+                },
+                "NumeroOrden": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "TipoProduccionId": {
+                    "$ref": "#/definitions/models.TipoProduccion"
+                }
+            }
+        },
+        "models.TipoMetadato": {
+            "title": "TipoMetadato",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "CodigoAbreviacion": {
+                    "type": "string"
+                },
+                "Descripcion": {
+                    "type": "string"
+                },
+                "FechaCreacion": {
+                    "type": "string"
+                },
+                "FechaModificacion": {
+                    "type": "string"
+                },
+                "FormDefinition": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
+                },
+                "NumeroOrden": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        "models.TipoProduccion": {
+            "title": "TipoProduccion",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "CodigoAbreviacion": {
+                    "type": "string"
+                },
+                "Descripcion": {
+                    "type": "string"
+                },
+                "FechaCreacion": {
+                    "type": "string"
+                },
+                "FechaModificacion": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
+                },
+                "NumeroOrden": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        "models.TrProduccionAcademica": {
+            "title": "TrProduccionAcademica",
+            "type": "object",
+            "properties": {
+                "Autores": {
+                    "$ref": "#/definitions/25151.\u003cnil\u003e.AutorProduccionAcademica"
+                },
+                "Metadatos": {
+                    "$ref": "#/definitions/25200.\u003cnil\u003e.MetadatoProduccionAcademica"
+                },
+                "ProduccionAcademica": {
+                    "$ref": "#/definitions/models.ProduccionAcademica"
+                }
+            }
+        },
+        "models.TrProduccionAcademicaController": {
+            "title": "TrProduccionAcademicaController",
+            "type": "object"
+        }
+    },
+    "tags": [
+        {
+            "name": "metadato_produccion_academica",
+            "description": "MetadatoProduccionAcademicaController operations for MetadatoProduccionAcademica\n"
+        },
+        {
+            "name": "tipo_produccion",
+            "description": "TipoProduccionController operations for TipoProduccion\n"
+        },
+        {
+            "name": "subtipo_produccion",
+            "description": "SubtipoProduccionController operations for SubtipoProduccion\n"
+        },
+        {
+            "name": "metadato_subtipo_produccion",
+            "description": "MetadatoSubtipoProduccionController operations for MetadatoSubtipoProduccion\n"
+        },
+        {
+            "name": "tipo_metadato",
+            "description": "TipoMetadatoController operations for TipoMetadato\n"
+        },
+        {
+            "name": "produccion_academica",
+            "description": "ProduccionAcademicaController operations for ProduccionAcademica\n"
+        },
+        {
+            "name": "tr_produccion_academica",
+            "description": "operations for TrProduccionAcademica\n"
+        },
+        {
+            "name": "estado_autor_produccion",
+            "description": "EstadoAutorProduccionController operations for EstadoAutorProduccion\n"
+        },
+        {
+            "name": "soporte_produccion_academica",
+            "description": "SoporteProduccionAcademicaController operations for SoporteProduccionAcademica\n"
+        },
+        {
+            "name": "autor_produccion_academica",
+            "description": "AutorProduccionAcademicaController operations for AutorProduccionAcademica\n"
+        }
+    ]
+}
